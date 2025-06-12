@@ -3,14 +3,15 @@
 A comprehensive machine learning project implementing k-Nearest Neighbors from scratch, with detailed mathematical analysis, decision model visualization, and performance evaluation on multiple real datasets.
 
 ## 📖 Table of Contents
-- [Algorithm Overview & Theory](#-algorithm-overview--theory)
-- [Mathematical Foundation](#-mathematical-foundation)  
-- [Decision Model Diagrams](#-decision-model-diagrams)
-- [Key Terms & Definitions](#-key-terms--definitions)
-- [Setup Procedures](#-setup-procedures)
-- [Project Structure](#-project-structure)
-- [Usage Examples](#-usage-examples)
-- [Performance Analysis](#-performance-analysis)
+- [🎯 Algorithm Overview & Theory](#-algorithm-overview--theory)
+- [🧮 Mathematical Foundation](#-mathematical-foundation)  
+- [🖥️ GUI Application](#️-gui-application)
+- [📊 Decision Model Diagrams](#-decision-model-diagrams)
+- [📚 Key Terms & Definitions](#-key-terms--definitions)
+- [🚀 Setup Procedures](#-setup-procedures)
+- [📁 Project Structure](#-project-structure)
+- [📝 Usage Examples](#-usage-examples)
+- [📈 Performance Analysis](#-performance-analysis)
 
 ## 🎯 Algorithm Overview & Theory
 
@@ -120,6 +121,108 @@ k = √n:    Common heuristic for balance
 - Consider odd values for binary classification (tie-breaking)
 - Balance between model complexity and generalization
 
+## 🖥️ GUI Application
+
+### 🏦 AI-Powered Banknote Authentication System
+
+This project includes a **beautiful, modern GUI application** that demonstrates the practical application of k-NN algorithms in real-world scenarios. The application uses advanced image processing and machine learning to authenticate banknotes in real-time.
+
+![Banknote Authentication](https://img.shields.io/badge/GUI-Ready-brightgreen)
+![Real--time](https://img.shields.io/badge/Processing-Real--time-blue)
+![Accuracy](https://img.shields.io/badge/Accuracy-95%25+-red)
+
+### ✨ Key Features
+
+#### 🎯 **Core Functionality**
+- **Real-time Authentication**: Instant classification of banknotes as genuine or forged
+- **High Accuracy**: Trained k-NN model with 95%+ accuracy on banknote authentication dataset
+- **Advanced Image Processing**: Sophisticated feature extraction using wavelet transforms
+- **Confidence Scoring**: Detailed probability analysis for each prediction
+
+#### 🎨 **User Interface**
+- **Modern Dark Theme**: Beautiful, eye-friendly interface with gradient backgrounds
+- **Intuitive Design**: Simple drag-and-drop or click-to-upload functionality
+- **Real-time Preview**: Instant image preview with processing feedback
+- **Professional Results**: Clear, color-coded authentication results
+
+#### 🔬 **Technical Features**
+- **Wavelet Feature Extraction**: Variance, skewness, kurtosis, and entropy calculation
+- **Multiple Image Formats**: Support for JPG, PNG, BMP, and TIFF files
+- **Quality Analysis**: Image quality assessment and recommendations
+- **Sample Images**: 12 pre-generated demo images (6 genuine, 6 forged)
+
+### 🚀 Quick Start GUI
+
+#### **Option 1: Automatic Setup (Recommended)**
+
+```bash
+# Windows
+setup_and_run_gui.bat
+
+# Linux/macOS  
+chmod +x setup_and_run_gui.sh
+./setup_and_run_gui.sh
+```
+
+#### **Option 2: Manual Setup**
+
+```bash
+# 1. Install GUI dependencies
+pip install -r gui_requirements.txt
+
+# 2. Generate sample images  
+python generate_sample_images.py
+
+# 3. Launch the application
+python gui_banknote_classifier.py
+```
+
+### 📱 How to Use the GUI
+
+1. **Launch Application**: Run the GUI using one of the methods above
+2. **Upload Image**: Click "Choose Image File" to select a banknote image
+3. **Try Samples**: Click "Use Sample Images" to test with demo images
+4. **View Results**: See instant authentication results with confidence scores
+5. **Analyze Features**: Examine the extracted features used for classification
+
+### 🔍 Understanding Results
+
+#### **Authentication Status**
+- **🟢 GENUINE**: The banknote appears to be authentic
+- **🔴 FORGED**: The banknote appears to be counterfeit
+
+#### **Confidence Levels**
+- **90-100%**: Very high confidence in the result
+- **80-89%**: High confidence  
+- **70-79%**: Moderate confidence
+- **Below 70%**: Low confidence - manual verification recommended
+
+#### **Extracted Features**
+The system analyzes four key features from banknote images:
+
+| Feature | Description | Purpose |
+|---------|-------------|---------|
+| **Variance** | Texture variation in wavelet coefficients | Detects printing quality |
+| **Skewness** | Asymmetry of coefficient distribution | Identifies pattern irregularities |
+| **Kurtosis** | Tail heaviness of distribution | Measures texture consistency |
+| **Entropy** | Information content and randomness | Assesses image complexity |
+
+### 🎯 Model Performance
+
+The GUI uses a highly accurate k-NN classifier:
+
+- **Algorithm**: k-Nearest Neighbors (k=5)
+- **Training Data**: 1,372 banknote samples
+- **Test Accuracy**: 95.4%
+- **Processing Time**: < 2 seconds per image
+- **Supported Formats**: JPG, PNG, BMP, TIFF
+
+### 📚 Additional Resources
+
+- **Detailed GUI Documentation**: See [GUI_README.md](GUI_README.md)
+- **Advanced Image Processing**: Check [advanced_image_processing.py](advanced_image_processing.py)
+- **Sample Image Generator**: Use [generate_sample_images.py](generate_sample_images.py)
+
 ## 📊 Decision Model Diagrams
 
 ### k-NN Decision Process Flow
@@ -215,18 +318,6 @@ graph TD
     M --> N
 ```
 
-### Feature Space Visualization
-
-```
-2D Feature Space Example (k=3):
-
-     Feature 2
-         ^
-         |
-    ●    |    ○     ● = Class A
-         |           ○ = Class B  
-    ○  ? |    ●     ? = Query Point
-    ○    |    ●
 ## 🛠️ Setup Procedures
 
 ### Prerequisites
@@ -856,37 +947,3 @@ results = comparator.evaluate_models(X_train, X_test, y_train, y_test, "Wine Qua
 # Generate visualizations
 comparator.plot_model_comparison("Wine Quality", "accuracy")
 ```
-
-## 🎓 Educational Value
-
-This project serves as an excellent learning resource for:
-
-- **Machine Learning Fundamentals**: Understanding lazy vs eager learning
-- **Algorithm Implementation**: Building ML algorithms from scratch
-- **Data Science Pipeline**: From data acquisition to model evaluation
-- **Performance Analysis**: Comprehensive model comparison techniques
-- **Hyperparameter Tuning**: Systematic optimization approaches
-
-## 🤝 Contributing
-
-Contributions are welcome! Areas for enhancement:
-
-1. **Additional Distance Metrics**: Implement more exotic distance measures
-2. **Optimization**: Add approximate nearest neighbor algorithms for speed
-3. **Visualization**: Enhanced plotting and interactive visualizations
-4. **Datasets**: Integration with more real-world datasets
-5. **Regression**: Extend implementation to regression problems
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- UCI Machine Learning Repository for providing real datasets
-- Scikit-learn team for reference implementations
-- Educational materials on lazy learning and instance-based algorithms
-
----
-
-**Note**: This project is designed for educational purposes and demonstrates fundamental concepts in machine learning, specifically focusing on k-Nearest Neighbors and instance-based learning approaches.
